@@ -27,6 +27,7 @@ public class PlaylistService {
     }
 
 
-
-
+    public void save(Playlist playlist) {
+        playlistRepository.save(playlist);
+    }
 }
