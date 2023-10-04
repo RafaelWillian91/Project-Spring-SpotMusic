@@ -16,13 +16,14 @@ public class Playlist {
     private Long id;
 
     @NotBlank
-    @Size(min = 2, max = 60)
+    @Size(min = 2, max = 60, message = "O campo deve ser maior que 1 e no máximo 60 caracteres!")
     @Column(nullable = false, length = 60)
     @NotEmpty(message = "O campo 'nome' não pode estar vazio")
     private String name;
     @NotBlank
     @Column(nullable = false)
     @NotEmpty(message = "O campo 'nome' não pode estar vazio")
+    @Size(min = 2, max = 60, message = "O campo deve ser maior que 1 e no máximo 60 caracteres!")
     private String description;
     @OneToMany(mappedBy = "playlists", cascade = CascadeType.ALL)
     private List<Music> listMusic;

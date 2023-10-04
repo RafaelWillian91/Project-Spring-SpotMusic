@@ -48,9 +48,11 @@ public class PlaylistController {
 
           playlistService.save(playlist);
 
-          attr.addAttribute("mensagem", "PlayList criada com Sucesso!");
+          attr.addFlashAttribute("mensagem", "PlayList criada com Sucesso!");
 
           //Cottroller /playlist/listar is called
         return "redirect:/playlists/list";
     }
+
+
 }

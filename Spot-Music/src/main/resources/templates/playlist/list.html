@@ -15,7 +15,7 @@
 
 <div class="container">
     <div class="jumbotron">
-        <h1>Spotmusic</h1>
+        <h1><a th:href="@{/home}" class="custom-link home">Spotmusic</a></h1>
     </div>
 
     <div>
@@ -29,9 +29,9 @@
         </h4>
 
         <div th:if="${mensagem != null}">
-            <div class="alert aler-info" role="alert">
+            <div class="alert alert-info" role="alert">
                 <span th:text="${mensagem}">mensagem</span>
-        </div>
+            </div>
         </div>
 
         <table class="table">
