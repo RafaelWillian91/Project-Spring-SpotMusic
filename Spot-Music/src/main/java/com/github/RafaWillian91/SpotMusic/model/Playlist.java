@@ -2,6 +2,8 @@ package com.github.RafaWillian91.SpotMusic.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -16,9 +18,11 @@ public class Playlist {
     @NotBlank
     @Size(min = 2, max = 60)
     @Column(nullable = false, length = 60)
+    @NotEmpty(message = "O campo 'nome' não pode estar vazio")
     private String name;
     @NotBlank
     @Column(nullable = false)
+    @NotEmpty(message = "O campo 'nome' não pode estar vazio")
     private String description;
     @OneToMany(mappedBy = "playlists", cascade = CascadeType.ALL)
     private List<Music> listMusic;
