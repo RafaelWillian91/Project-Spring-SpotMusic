@@ -19,7 +19,7 @@
     </div>
 
     <div>
-        <a class="btn btn-primary" href="/playlists/register">Nova playlist</a>
+        <a class="btn btn-primary" th:href="@{/playlists/register}" >Nova playlist</a>
     </div>
     <hr/>
 
@@ -27,6 +27,12 @@
         <h4>
             Playlists
         </h4>
+
+        <div th:if="${mensagem != null}">
+            <div class="alert aler-info" role="alert">
+                <span th:text="${mensagem}">mensagem</span>
+        </div>
+        </div>
 
         <table class="table">
             <thead>
@@ -61,7 +67,7 @@
     <hr/>
 
     <footer class="footer">
-        <p>© Rafael Willian</p>
+        <p>© By Rafael Willian</p>
     </footer>
 </div>
 </body>

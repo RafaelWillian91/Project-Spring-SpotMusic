@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost/dbspotmusic?useSSL=false&createDatabaseIfNotExist=true
     username: root
-    password: Rafas2@jojo
+    password: local1234@
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
