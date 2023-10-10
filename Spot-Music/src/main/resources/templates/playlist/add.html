@@ -24,7 +24,7 @@
 
 
 
-    <form th:action="@{/playlists/save}" th:method="post" th:object="${playlists}">
+    <form th:action="@{/playlists/save}" th:method="${playlists.name == null ? 'post' : 'put'}" th:object="${playlists}">
         <div class="row">
             <input id="id" type="hidden" th:field="*{id}"/>
             <div class="form-group col-md-4">

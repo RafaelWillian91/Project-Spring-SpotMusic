@@ -44,12 +44,12 @@
             </thead>
             <tr th:each="playlist : ${playlists}">
                 <td>
-                    <a th:text="${playlist.name}">nome</a>
+                    <a th:text="${playlist.name}" th:href="@{/playlist/{id}/musics/listMusic(id = ${playlist.id})}">nome</a>
                 </td>
                 <td th:text="${playlist.description}">descricao</td>
                 <td>
-                    <a class="btn btn-sm btn-info">Editar</a>
-                    <a class="btn btn-sm btn-danger">Excluir</a>
+                    <a class="btn btn-sm btn-info" th:href="@{/playlists/{id}/update(id=${playlist.id})}">Editar</a>
+                    <a class="btn btn-sm btn-danger" th:href="@{/playlists/{id}/delete(id=${playlist.id})}" >Excluir</a>
                 </td>
             </tr>
         </table>

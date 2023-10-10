@@ -30,4 +30,16 @@ public class PlaylistService {
     public void save(Playlist playlist) {
         playlistRepository.save(playlist);
     }
+
+    public void delete(long id){
+        playlistRepository.deleteById(id);
+    }
+
+    public Playlist viewData(long id){
+        Playlist playlist = playlistRepository.getReferenceById(id);
+        return playlist;
+    }
+
+
+
 }

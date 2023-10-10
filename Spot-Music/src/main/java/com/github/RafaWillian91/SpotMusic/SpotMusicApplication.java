@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.github.RafaWillian91.SpotMusic")
 @EntityScan("com.github.RafaWillian91.SpotMusic.model")
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = "com.github.RafaWillian91.SpotMusic.repository")
 public class SpotMusicApplication {
 
 	public static void main(String[] args) {

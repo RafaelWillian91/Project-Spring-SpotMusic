@@ -59,4 +59,12 @@ public class Music {
     public void setScore(int score) {
         this.score = score;
     }
+
+    public void setPlaylists(Playlist playlists) {
+        this.playlists = playlists;
+    }
+
+    public Playlist getPlaylists() {
+        return playlists;
+    }
 }

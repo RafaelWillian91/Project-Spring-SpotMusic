@@ -1,4 +1,8 @@
 spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
   datasource:
     url: jdbc:mysql://localhost/dbspotmusic?useSSL=false&createDatabaseIfNotExist=true
     username: root

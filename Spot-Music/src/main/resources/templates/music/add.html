@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Spotmusic</title>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,
+    user-scalable=no"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Spotmusic</h1>
+  </div>
+
+  <h4>
+    Nova música
+  </h4>
+
+  <form th:action="@{/playlist/{playlistID}/musics/saveMusic(playlistID=${playlistID})}" th:method="${music.id} == null ? 'post' : 'put'" th:object="${music}">
+    <div class="row">
+      <input id="id" type="hidden" name="id" th:field="*{id} "/>
+      <div class="form-group col-md-4">
+        <label for="titulo">Título:</label>
+        <input class="form-control" id="titulo"
+               type="text" th:field="*{title}"/>
+        <div th:if="${#fields.hasErrors('title')}"  th:class="${#fields.hasErrors('title')} ? 'alert alert-danger' : ''"
+             th:errors="*{title}"></div>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="banda">Banda:</label>
+        <input class="form-control" id="banda"
+               type="text" th:field="*{band}"/>
+        <div th:if="${#fields.hasErrors('band')}"  th:class="${#fields.hasErrors('band')} ? 'alert alert-danger' : ''"
+             th:errors="*{band}"></div>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="nota">Nota:</label>
+        <input class="form-control" id="nota"
+               type="number" th:field="*{score}"/>
+        <div th:if="${#fields.hasErrors('score')}"  th:class="${#fields.hasErrors('score')} ? 'alert alert-danger' : ''"
+             th:errors="*{score}"></div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary"
+              type="submit">Salvar</button>
+    </div>
+
+  </form>
+  <hr/>
+
+  <a class="btn btn-light" th:href="@{/playlist/{playlistID}/musics/listMusic(playlistID = ${playlistID})}">Voltar</a>
+
+  <hr/>
+  <footer class="footer">
+    <p>© 2018 DevMedia</p>
+  </footer>
+
+</div>
+</body>
+</html>
