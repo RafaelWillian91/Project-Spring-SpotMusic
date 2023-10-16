@@ -71,13 +71,13 @@ public class MusicController {
     }
 
 
-    @GetMapping("/remove")
-    public String remove(@PathVariable ("playlistId") long playlistId, @PathVariable("musicaId")
+    @GetMapping("{musicId}/remove")
+    public String remove(@PathVariable ("playlistID") long playlistId, @PathVariable("musicId")
     long musicaId, RedirectAttributes attr){
-        musicService.delete(playlistId);
+        musicService.delete(musicaId);
         attr.addFlashAttribute("mensagem",
                 "Música excluída com sucesso.");
-        return "redirect:/playlists/" + playlistId + "/musicas/listar";
+        return "redirect:/playlist/" + playlistId + "/musics/listMusic";
     }
 
 

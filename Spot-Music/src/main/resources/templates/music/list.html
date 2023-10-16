@@ -51,7 +51,7 @@
                 <td>
                     <a class="btn btn-sm btn-info" th:href="@{/playlist/{idPlaylist}/musics/{musicId}/updateMusic(idPlaylist=${playlistID}, musicId = ${musica.id})}">Editar</a>
                     <a class="btn btn-sm btn-danger"
-                       th:href="@{$}">Excluir</a>
+                       th:href="@{/playlist/{idPlaylist}/musics/{musicId}/remove(idPlaylist=${playlistID}, musicId = ${musica.id})}">Excluir</a>
                 </td>
             </tr>
         </table>
