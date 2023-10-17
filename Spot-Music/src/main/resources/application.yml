@@ -4,9 +4,9 @@ spring:
       filter:
         enabled: true
   datasource:
-    url: jdbc:mysql://localhost/dbspotmusic?useSSL=false&createDatabaseIfNotExist=true
-    username: root
-    password: senha123
+    url: jdbc:mysql://${host}/dbspotmusic?useSSL=false&createDatabaseIfNotExist=true
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
