@@ -40,9 +40,6 @@ public class MusicService {
 
     }
 
-    public void updateMusic(Music music){
-        musicRepository.save(music);
-    }
 
     public Music viewData(long idMusic){
         return musicRepository.getReferenceById(idMusic);

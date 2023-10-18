@@ -63,7 +63,7 @@ public class MusicController {
             return "music/add";
         }
 
-        musicService.updateMusic(music);
+        musicService.save(music, playlistID);
 
         attr.addFlashAttribute("mensagem", "Musica Atualizada com Sucesso!");
 
