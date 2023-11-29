@@ -1,3 +1,5 @@
+#Demonstração na AWS: http://18.190.144.69:8080/
+
 # Projeto Spring-SpotMusic
 
 O Spring-SpotMusic é um projeto de exemplo que demonstra a criação de uma aplicação web usando tecnologias como Spring Boot, Spring Data JPA, Hibernate, Thymeleaf e Bootstrap. Este projeto oferece uma plataforma básica para gerenciar playlists de músicas.
