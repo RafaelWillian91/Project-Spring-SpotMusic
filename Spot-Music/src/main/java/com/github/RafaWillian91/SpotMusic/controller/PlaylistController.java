@@ -29,7 +29,7 @@ public class PlaylistController {
     @GetMapping("/list")
     public String listar(Model model) {
         model.addAttribute("playlists", playlistService.listAll());
-        return "/playlist/list";
+        return "playlist/list";
     }
 
     @GetMapping("/register")
