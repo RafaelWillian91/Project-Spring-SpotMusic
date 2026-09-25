@@ -14,7 +14,7 @@
 
 <div class="container">
   <div class="jumbotron">
-    <h1>Spotmusic</h1>
+    <h1><a th:href="@{/home}" class="custom-link home">Spotmusic</a></h1>
   </div>
 
   <h4>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="form-group col-md-4">
-        <label for="nota">Nota:</label>
+        <label for="nota">Nota de 0 a 10:</label>
         <input class="form-control" id="nota"
                type="number" th:field="*{score}"/>
         <div th:if="${#fields.hasErrors('score')}"  th:class="${#fields.hasErrors('score')} ? 'alert alert-danger' : ''"

@@ -37,15 +37,17 @@ public class MusicController {
     @PostMapping("/saveMusic")
     public String save(@PathVariable("playlistID") long playlistId, @Valid @ModelAttribute("music") Music music, BindingResult
             result, RedirectAttributes attr) {
+
         if (result.hasErrors()) {
             return "/music/add";
         }
 
         musicService.save(music, playlistId);
 
+        //principalmente para levar uma informação até a próxima requisição
         attr.addFlashAttribute("mensagem", "Musica criada com Sucesso!");
 
-        //Cottroller /playlist/listar is called
+        //nova requisição GET
         return "redirect:/playlist/" + playlistId + "/musics/listMusic";
     }
 
@@ -57,7 +59,8 @@ public class MusicController {
     }
 
     @PutMapping("/saveMusic")
-    public String update(@Valid @ModelAttribute ("music") Music music, @PathVariable("playlistID") long playlistID , BindingResult result, RedirectAttributes attr){
+    public String update(@Valid @ModelAttribute ("music") Music music,BindingResult
+            result, RedirectAttributes attr, @PathVariable("playlistID") long playlistID){
 
         if(result.hasErrors()){
             return "music/add";

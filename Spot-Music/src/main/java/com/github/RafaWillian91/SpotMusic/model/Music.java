@@ -21,7 +21,7 @@ public class Music {
     @Size(min = 2, max = 60)
     @Column(nullable = false, length = 50)
     private String band;
-    @Range(min = 0, max = 10)
+    @Range(min = 0, max = 10, message = "A nota deve estar entre 0 e 10")
     @Column(nullable = false)
     private int score;
     @ManyToOne
