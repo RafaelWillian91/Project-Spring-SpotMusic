@@ -55,7 +55,7 @@ public class MusicController {
     public ModelAndView editPlaylist(@PathVariable("id") long id,@PathVariable("playlistID") long playlistID, ModelMap model){
         Music music = musicService.viewData(id);
         model.addAttribute("music", music);
-        return new ModelAndView("/music/add");
+        return new ModelAndView("music/add");
     }
 
     @PutMapping("/saveMusic")
